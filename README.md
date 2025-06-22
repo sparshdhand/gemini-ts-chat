@@ -1,73 +1,187 @@
-# Welcome to your Lovable project
 
-## Project info
+# Gemini Swift Chat
 
-**URL**: https://lovable.dev/projects/d86b717d-1849-4efe-9e9e-c7ddb179fe7a
+A modern web-based chat interface for Google's Gemini AI models, built with React, TypeScript, and Tailwind CSS.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 🤖 **Multiple Gemini Models**: Support for all available Gemini models including Pro, Flash, and Vision variants
+- 💬 **ChatGPT-like Interface**: Clean, modern chat interface with message history
+- 🔐 **Secure API Key Management**: Local storage of API keys with easy management
+- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- 💾 **Persistent Chat History**: Conversations are saved locally on your device
+- ⚡ **Real-time Responses**: Fast, streaming responses from Gemini AI
+- 🎨 **Beautiful UI**: Modern gradient design with smooth animations
 
-**Use Lovable**
+## Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d86b717d-1849-4efe-9e9e-c7ddb179fe7a) and start prompting.
+Before you begin, ensure you have the following installed on your system:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Node.js** (version 18.0.0 or higher)
+- **npm** (comes with Node.js) or **yarn**
+- A **Gemini API key** from Google AI Studio
 
-**Use your preferred IDE**
+## Getting Your Gemini API Key
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy the generated API key (keep it secure!)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Installation Instructions
 
-Follow these steps:
+### Option 1: Clone from GitHub (Recommended)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**:
+   ```bash
+   git clone <YOUR_REPOSITORY_URL>
+   cd gemini-swift-chat
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Open your browser** and navigate to:
+   ```
+   http://localhost:8080
+   ```
+
+### Option 2: Download and Extract
+
+1. **Download** the project as a ZIP file
+2. **Extract** the ZIP file to your desired location
+3. **Open terminal/command prompt** in the extracted folder
+4. **Follow steps 2-4** from Option 1 above
+
+## First Time Setup
+
+1. **Launch the application** in your browser
+2. **Enter your API key** when prompted (or click the key icon in the top-right)
+3. **Select your preferred Gemini model** from the settings
+4. **Start chatting!** Your conversations will be saved automatically
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the app for production
+- `npm run preview` - Preview the production build locally
+
+## Usage
+
+### Setting Up Your API Key
+
+1. Click the **key icon** (🔑) in the top navigation
+2. Paste your Gemini API key
+3. Click **"Save API Key"**
+4. Your key is stored securely in your browser's local storage
+
+### Selecting Models
+
+1. Click the **settings icon** (⚙️) in the top navigation
+2. Choose from available Gemini models:
+   - `gemini-1.5-flash` - Fast responses, good for general chat
+   - `gemini-1.5-pro` - More capable, better for complex tasks
+   - `gemini-1.0-pro` - Original Gemini model
+   - And more...
+
+### Chat Features
+
+- **Send messages**: Type your message and press Enter or click Send
+- **Copy responses**: Click the copy icon on any message
+- **Clear history**: Click the trash icon to clear all messages
+- **Auto-scroll**: Messages automatically scroll to the latest
+
+## Data Storage
+
+- **API Keys**: Stored locally in your browser (never sent to our servers)
+- **Chat History**: Saved in your browser's local storage
+- **Model Preferences**: Remembered between sessions
+
+## Troubleshooting
+
+### Common Issues
+
+**Error: "API Key Required"**
+- Make sure you've entered your Gemini API key correctly
+- Verify your API key is active in Google AI Studio
+
+**Error: "Failed to send message"**
+- Check your internet connection
+- Verify your API key hasn't expired
+- Try switching to a different Gemini model
+
+**Application won't start**
+- Ensure Node.js version 18+ is installed
+- Delete `node_modules` and run `npm install` again
+- Check that port 8080 isn't being used by another application
+
+### Clearing Data
+
+To reset the application:
+1. Clear chat history using the trash icon in the app
+2. Or manually clear browser data for localhost:8080
+
+## Development
+
+### Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ChatInterface.tsx    # Main chat interface
+│   ├── ChatMessage.tsx      # Individual message component
+│   ├── ModelSelector.tsx    # Model selection dropdown
+│   └── ApiKeyManager.tsx    # API key management modal
+├── services/           # API services
+│   └── geminiService.ts    # Gemini API integration
+├── utils/              # Utility functions
+│   └── storageUtils.ts     # Local storage helpers
+└── pages/              # Page components
+    └── Index.tsx           # Main page
 ```
 
-**Edit a file directly in GitHub**
+### Built With
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI components
+- **Lucide React** - Icons
 
-**Use GitHub Codespaces**
+## Contributing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-## What technologies are used for this project?
+## Security Notes
 
-This project is built with:
+- API keys are stored only in your browser's local storage
+- No data is sent to external servers except Google's Gemini API
+- Chat history remains on your device
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## License
 
-## How can I deploy this project?
+This project is open source and available under the MIT License.
 
-Simply open [Lovable](https://lovable.dev/projects/d86b717d-1849-4efe-9e9e-c7ddb179fe7a) and click on Share -> Publish.
+## Support
 
-## Can I connect a custom domain to my Lovable project?
+If you encounter any issues:
+1. Check the troubleshooting section above
+2. Review your API key and network connection
+3. Try clearing your browser cache
+4. Open browser developer tools to check for error messages
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Enjoy chatting with Gemini AI! 🚀**
